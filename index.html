@@ -3,124 +3,285 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="BWB HUB: página em construção." />
-    <title>BWB HUB | Página em construção</title>
-    <link rel="icon" href="assets/bwb-doc-image-1.png" />
+    <meta
+      name="description"
+      content="BWB: consultoria, representação e agenciamento de negócios com inteligência de mercado, segurança jurídica e visão de longo prazo."
+    />
+    <title>BWB Serviços | Desenvolvimento estratégico de negócios</title>
+    <link rel="icon" href="assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --green-950: #092415;
-        --ivory-50: #fbf7ee;
-        --gold-300: #d8c28e;
-        --font-display: "Libre Baskerville", Georgia, serif;
-        --font-sans: "Montserrat", Arial, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        display: grid;
-        min-height: 100svh;
-        margin: 0;
-        place-items: center;
-        overflow: hidden;
-        background:
-          linear-gradient(180deg, rgba(9, 36, 21, 0) 0%, rgba(9, 36, 21, 0.36) 100%),
-          var(--green-950);
-        color: var(--ivory-50);
-        font-family: var(--font-sans);
-        font-weight: 600;
-        text-rendering: geometricPrecision;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background:
-          linear-gradient(90deg, rgba(251, 247, 238, 0.04) 1px, transparent 1px),
-          linear-gradient(180deg, rgba(251, 247, 238, 0.04) 1px, transparent 1px);
-        background-size: 120px 120px;
-        mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.68), transparent 72%);
-        pointer-events: none;
-      }
-
-      main {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        justify-items: center;
-        width: min(760px, calc(100% - 40px));
-        text-align: center;
-      }
-
-      h1 {
-        margin: 0;
-        font-family: var(--font-display);
-        font-size: clamp(5rem, 19vw, 11.5rem);
-        font-weight: 700;
-        line-height: 0.84;
-      }
-
-      .logo-hub {
-        display: grid;
-        grid-template-columns: minmax(42px, 1fr) auto minmax(42px, 1fr);
-        gap: clamp(16px, 4vw, 34px);
-        align-items: center;
-        width: min(520px, 82vw);
-        margin-top: clamp(16px, 2.5vw, 24px);
-        color: rgba(251, 247, 238, 0.78);
-      }
-
-      .logo-hub span {
-        height: 1px;
-        background: currentColor;
-      }
-
-      .logo-hub strong {
-        color: var(--ivory-50);
-        font-size: clamp(1.15rem, 3vw, 2.2rem);
-        font-weight: 800;
-        line-height: 1;
-      }
-
-      p {
-        max-width: 420px;
-        margin: clamp(42px, 7vw, 64px) 0 0;
-        color: var(--gold-300);
-        font-size: clamp(0.78rem, 2vw, 0.92rem);
-        font-weight: 900;
-        letter-spacing: 0;
-        text-transform: uppercase;
-      }
-
-      @media (max-width: 520px) {
-        main {
-          width: min(100% - 32px, 760px);
-        }
-
-        h1 {
-          font-size: clamp(4.35rem, 26vw, 6.75rem);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main aria-labelledby="page-title">
-      <h1 id="page-title">BWB</h1>
-      <div class="logo-hub" aria-label="BWB Serviços">
+    <header class="site-header" data-header>
+      <a class="brand-link" href="#inicio" aria-label="BWB Serviços">
+        <img src="assets/brand-mark.png" alt="" class="brand-mark" />
+        <span>BWB Serviços</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Abrir menu</span>
         <span></span>
-        <strong>Serviços</strong>
         <span></span>
-      </div>
-      <p>Página em manutenção</p>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <a href="#atuacao">Atuação</a>
+        <a href="#missao">Missão</a>
+        <a href="#valores">Valores</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Desde 2019</p>
+          <h1 id="hero-title" class="sr-only">BWB Serviços</h1>
+          <img src="assets/bwb_high.png" alt="BWB Serviços" class="hero-logo" />
+          <p class="hero-lead">
+            Consultoria, representação e agenciamento de negócios para conectar empresas a
+            oportunidades consistentes, com inteligência de mercado, segurança e visão de longo prazo.
+          </p>
+          <div class="hero-actions" aria-label="Ações principais">
+            <a class="button button-primary" href="#contato">Apresentar oportunidade</a>
+            <a class="button button-secondary" href="#atuacao">Conhecer atuação</a>
+          </div>
+        </div>
+
+        <div class="hero-proof" aria-label="Destaques da BWB">
+          <article class="proof-card">
+            <div class="proof-copy">
+              <strong>Estratégia</strong>
+              <span>Análise qualificada de cenários e oportunidades.</span>
+            </div>
+            <img src="assets/hero-strategy.png" alt="" class="proof-image proof-image-large" />
+          </article>
+          <article class="proof-card">
+            <div class="proof-copy">
+              <strong>Segurança</strong>
+              <span>Relações orientadas por critérios legais e negociais.</span>
+            </div>
+            <img src="assets/hero-security.png" alt="" class="proof-image proof-image-tall" />
+          </article>
+          <article class="proof-card">
+            <div class="proof-copy">
+              <strong>Valor</strong>
+              <span>Conexões empresariais sustentáveis e duradouras.</span>
+            </div>
+            <img src="assets/hero-value.png" alt="" class="proof-image proof-image-wide" />
+          </article>
+        </div>
+      </section>
+
+      <section class="section intro-section" id="atuacao" aria-labelledby="atuacao-title">
+        <div class="section-kicker">Atuação</div>
+        <div class="intro-grid">
+          <div>
+            <h2 id="atuacao-title">Conexões de valor para decisões empresariais consistentes.</h2>
+          </div>
+          <div class="intro-copy">
+            <p>
+              Fundada em janeiro de 2019, a BWB atua de forma estruturada e estratégica nas áreas de
+              consultoria, representação e agenciamento de negócios, conectando empresas a oportunidades
+              economicamente viáveis, juridicamente seguras e alinhadas a relações de valor.
+            </p>
+            <p>
+              A empresa organiza relações empresariais com ética, respeito, transparência e boa-fé,
+              preservando a autonomia decisória de clientes e parceiros envolvidos.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-grid" aria-label="Frentes de atuação">
+          <article class="service-card">
+            <span>01</span>
+            <h3>Consultoria estratégica</h3>
+            <p>Leitura de cenários, análise de oportunidades e suporte à tomada de decisões.</p>
+          </article>
+          <article class="service-card">
+            <span>02</span>
+            <h3>Representação</h3>
+            <p>Condução profissional de interesses empresariais com alinhamento e previsibilidade.</p>
+          </article>
+          <article class="service-card">
+            <span>03</span>
+            <h3>Agenciamento de negócios</h3>
+            <p>Aproximação qualificada entre empresas, demandas e oportunidades viáveis.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section method-section" aria-labelledby="metodo-title">
+        <div class="section-kicker">Método</div>
+        <h2 id="metodo-title">Da oportunidade à relação estruturada.</h2>
+        <div class="method-list">
+          <article>
+            <img src="assets/method-identify.png" alt="" class="method-icon" />
+            <span>Identificar</span>
+            <p>Mapeamento criterioso de oportunidades e interesses legítimos entre as partes.</p>
+          </article>
+          <article>
+            <img src="assets/method-structure.png" alt="" class="method-icon" />
+            <span>Estruturar</span>
+            <p>Construção de caminhos negociais com transparência, técnica e segurança.</p>
+          </article>
+          <article>
+            <img src="assets/method-sustain.png" alt="" class="method-icon" />
+            <span>Sustentar</span>
+            <p>Acompanhamento estratégico para fortalecer relações sólidas e de longo prazo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section mission-section" id="missao" aria-labelledby="missao-title">
+        <div class="mission-copy">
+          <div class="section-kicker">Missão e visão</div>
+          <h2 id="missao-title">Responsabilidade institucional como base de crescimento.</h2>
+          <p>
+            Mais do que viabilizar negócios, a BWB estrutura conexões de valor, promove relações
+            sólidas e contribui para o crescimento sustentável, sempre observados os limites de sua
+            atuação e a autonomia decisória das partes envolvidas.
+          </p>
+        </div>
+        <div class="mission-panels">
+          <article class="mission-panel mission-panel-mission">
+            <div class="mission-panel-copy">
+              <h3>Missão</h3>
+              <p>
+                Atuar com excelência técnica e responsabilidade institucional na prestação de serviços de
+                consultoria, representação e agenciamento de negócios.
+              </p>
+            </div>
+            <img src="assets/mission-icon.png" alt="" class="mission-image" />
+          </article>
+          <article class="mission-panel">
+            <div class="mission-panel-copy">
+              <h3>Visão</h3>
+              <p>
+                Consolidar-se como empresa de referência no desenvolvimento estratégico de negócios,
+                reconhecida pela solidez, credibilidade e segurança de sua atuação.
+              </p>
+            </div>
+            <img src="assets/vision-icon.png" alt="" class="mission-image mission-image-vision" />
+          </article>
+        </div>
+      </section>
+
+      <section class="section values-section" id="valores" aria-labelledby="valores-title">
+        <div class="values-heading">
+          <div class="section-kicker">Valores</div>
+          <h2 id="valores-title">Princípios que orientam cada relação.</h2>
+        </div>
+        <div class="values-grid">
+          <article>
+            <img src="assets/principle-ethics.png" alt="" class="value-image" />
+            <div>
+              <h3>Ética e boa-fé objetiva</h3>
+              <p>Integridade, lealdade negocial e observância aos preceitos legais aplicáveis.</p>
+            </div>
+          </article>
+          <article>
+            <img src="assets/principle-respect.png" alt="" class="value-image" />
+            <div>
+              <h3>Respeito institucional</h3>
+              <p>Urbanidade, equilíbrio e consideração pela autonomia das partes envolvidas.</p>
+            </div>
+          </article>
+          <article>
+            <img src="assets/principle-transparency.png" alt="" class="value-image" />
+            <div>
+              <h3>Transparência</h3>
+              <p>Comunicação clara, precisa e tecnicamente adequada em todas as tratativas.</p>
+            </div>
+          </article>
+          <article>
+            <img src="assets/principle-excellence.png" alt="" class="value-image" />
+            <div>
+              <h3>Excelência</h3>
+              <p>Diligência qualificada, disciplina operacional e elevado padrão técnico.</p>
+            </div>
+          </article>
+          <article>
+            <img src="assets/principle-credibility.png" alt="" class="value-image" />
+            <div>
+              <h3>Credibilidade institucional</h3>
+              <p>Condutas consistentes, previsibilidade comportamental e segurança nas relações.</p>
+            </div>
+          </article>
+          <article>
+            <img src="assets/principle-strategic-vision.png" alt="" class="value-image" />
+            <div>
+              <h3>Visão estratégica</h3>
+              <p>Inteligência, responsabilidade e perspectiva de longo prazo na geração de valor.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contato" aria-labelledby="contato-title">
+        <div class="contact-content">
+          <div>
+            <div class="section-kicker">Contato</div>
+            <h2 id="contato-title">Vamos estruturar a próxima oportunidade.</h2>
+            <p>
+              Compartilhe o contexto do negócio para que a BWB avalie o melhor caminho de aproximação,
+              análise e condução estratégica.
+            </p>
+          </div>
+
+          <form class="contact-form" data-contact-form>
+            <label>
+              Nome
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Empresa
+              <input type="text" name="company" autocomplete="organization" required />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Mensagem
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Enviar interesse</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <div class="footer-mark-group">
+          <img src="assets/brand-mark.png" alt="" class="brand-mark" />
+        </div>
+        <div class="footer-brand-copy">
+          <a href="#inicio" aria-label="BWB Serviços">BWB Serviços</a>
+          <p>Consultoria, representação e agenciamento de negócios.</p>
+        </div>
+      </div>
+      <div class="footer-info">
+        <address>
+          Avenida Coronel Venâncio Flores, n. 3449, Sala 01, Guaxindiba<br />
+          Aracruz/ES, CEP 29.190-341
+        </address>
+      </div>
+      <p class="footer-credit">
+        Desenvolvido por
+        <a href="https://cv.jdcastro.dev" target="_blank" rel="noopener noreferrer">José Diogo Castro</a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
