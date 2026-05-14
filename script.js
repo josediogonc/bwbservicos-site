@@ -68,9 +68,49 @@ if ("IntersectionObserver" in window && navSections.length) {
 }
 
 if (contactForm && formStatus) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    formStatus.textContent = "Interesse registrado. A equipe BWB retornará pelo canal informado.";
-    contactForm.reset();
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const formData = new FormData(contactForm);
+    const payload = Object.fromEntries(formData.entries());
+
+    formStatus.classList.remove("is-error", "is-success");
+    formStatus.textContent = "Enviando mensagem...";
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message || "Não foi possível enviar a mensagem.");
+      }
+
+      formStatus.classList.add("is-success");
+      formStatus.textContent = result.message;
+      contactForm.reset();
+    } catch (error) {
+      formStatus.classList.add("is-error");
+      formStatus.textContent =
+        error instanceof Error
+          ? error.message
+          : "Não foi possível enviar a mensagem. Tente novamente em instantes.";
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
   });
 }
