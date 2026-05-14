@@ -1,0 +1,11 @@
+{
+  "name": "bwbservicos-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check api/contact.js && node --check script.js"
+  },
+  "dependencies": {
+    "nodemailer": "^8.0.7"
+  }
+}

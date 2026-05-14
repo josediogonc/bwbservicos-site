@@ -749,6 +749,11 @@ p {
   box-shadow: var(--shadow);
 }
 
+.form-trap {
+  position: absolute;
+  left: -9999px;
+}
+
 .contact-form label {
   display: grid;
   gap: 8px;
@@ -785,11 +790,24 @@ p {
   cursor: pointer;
 }
 
+.contact-form .button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .form-status {
   min-height: 22px;
   color: var(--green-800);
   font-size: 0.9rem;
   font-weight: 800;
+}
+
+.form-status.is-error {
+  color: #9f1d1d;
+}
+
+.form-status.is-success {
+  color: var(--green-800);
 }
 
 .site-footer {
